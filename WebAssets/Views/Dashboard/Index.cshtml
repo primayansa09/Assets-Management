@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/DLayout/DLayout.cshtml";
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <br />
+        <!-- Button trigger modal -->
+
+        <div class="card-body">
+            <h3> @ViewBag.name (@ViewBag.nik)</h3>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">List of Borrow Assets</h6>
+        </div>
+        <br />
+        <!-- Tabs navs -->
+        <ul class="nav nav-tabs nav-fill mb-3" id="ex1" role="tablist">
+            <li class="nav-item"><a class="nav-link active" href="#tab-1" data-target=".etab-p1, .etabi-img1" data-toggle="tab">Pending</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tab-2" data-target=".etab-p2, .etabi-img2" data-toggle="tab">Accepted</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tab-3" data-target=".etab-p3, .etabi-img3" data-toggle="tab">Rejected</a></li>
+        </ul>
+        <!-- Tabs navs -->
+        <!-- Tabs content -->
+        <div class="tab-content" id="ex2-content">
+            <div class="tab-pane fade show active etab-p1 ml-1">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle mb-0 bg-white" id="BorrowAssetsTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">No.</th>
+                                    <th>Name of Employee</th>
+                                    <th>Name of Borrow Asset</th>
+                                    <th>Quantity</th>
+                                    <th>Borrow Time</th>
+                                    <th>Return Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade etab-p2 ml-1">
+                Tab 2 content
+            </div>
+            <div class="tab-pane fade etab-p3 ml-1">
+                Tab 3 content
+            </div>
+        </div>
+        <!-- Tabs content -->
+     
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/HomeScript.js"></script>
+}

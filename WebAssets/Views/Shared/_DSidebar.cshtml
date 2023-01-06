@@ -1,0 +1,210 @@
+﻿<!-- Sidebar -->
+<ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #005A8D">
+
+    <!-- Sidebar - Brand -->
+    @*<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <div class="align-self-auto">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center">
+                    <img src="~/img/berca.png" alt="LogoBerca" width="100px">
+                </a>
+            </div>
+            <div class="sidebar-brand-text mx-3 align-items-center">
+            <br/>Assets Management</div>
+        </a>*@
+    <div class="align-items-center">
+        <br />
+        <a class="sidebar-brand d-flex align-items-center justify-content-center">
+            <img src="~/img/bercaLogo.png" alt="LogoBerca" width="100px">
+        </a>
+    </div>
+    <br />
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
+        <div class="sidebar-brand-text mx-3 text-gray-300">
+            <h6 class="m-0 font-weight-bold text-ligth">Assets Management</h6>
+        </div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    @if (ViewBag.Role == "Admin")
+    {
+        <li class="nav-item" id="tab-home">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Index">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <li class="nav-item" id="tab-borrowassets">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="BorrowAssets">
+                <i class="fas fa-hand-holding"></i>
+                <span>Borrow Assets</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-employees">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Employees">
+                <i class="fas fa-users"></i>
+                <span>Employees</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-departements">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Departements">
+                <i class="fas fa-layer-group"></i>
+                <span>Departements</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-roles">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Roles">
+                <i class="fas fa-pencil-ruler"></i>
+                <span>Roles</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-assets">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Assets">
+                <i class="fas fa-database"></i>
+                <span>Assets</span>
+            </a>
+        </li>
+        @*<hr class="sidebar-divider">*@
+
+        @*<li class="nav-item" id="tab-profile">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Profile">
+                <i class="fa fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </li>*@
+    }
+    @if (ViewBag.Role == "Employee")
+    {
+        <li class="nav-item" id="tab-home">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Index">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-borrowassets">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="RequestAssets">
+                <i class="fas fa-hand-holding"></i>
+                <span>Request Asset</span>
+            </a>
+        </li>
+
+        @*<hr class="sidebar-divider">*@
+
+        @*<li class="nav-item" id="tab-profile">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Profile">
+                <i class="fa fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </li>*@
+    }
+    @if (ViewBag.Role == "Manager")
+    {
+        <li class="nav-item">
+            <a class="nav-link" id="tab-home" asp-controller="Dashboard" asp-action="Index">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-borrowassets">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="BorrowAssetsManager">
+                <i class="fas fa-hand-holding"></i>
+                <span>Borrow Assets</span>
+            </a>
+        </li>
+
+        @*<hr class="sidebar-divider">*@
+
+        @*<li class="nav-item" id="tab-profile">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Profile">
+                <i class="fa fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </li>*@
+    }
+    @if (ViewBag.Role == "Manager Assets")
+    {
+        <li class="nav-item">
+            <a class="nav-link" id="tab-home" asp-controller="Dashboard" asp-action="Index">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-borrowassets">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="BorrowAssetsManagerAsset">
+                <i class="fas fa-hand-holding"></i>
+                <span>Borrow Assets</span>
+            </a>
+        </li>
+
+        @*<hr class="sidebar-divider">*@
+
+        @*<li class="nav-item" id="tab-profile">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Profile">
+                <i class="fa fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </li>*@
+    }
+    @*<li class="nav-item">
+            <a class="nav-link" id="tab-home" asp-controller="Dashboard" asp-action="Index">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-borrowassets">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="BorrowAssets">
+            <i class="fas fa-database"></i>
+                <span>Borrow Assets</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-employees">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Employees">
+                <i class="fas fa-users"></i>
+                <span>Employees</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-departements">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Departements">
+                <i class="fas fa-layer-group"></i>
+                <span>Departements</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-roles">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Roles">
+                <i class="fas fa-pencil-ruler"></i>
+                <span>Roles</span>
+            </a>
+        </li>
+
+        <li class="nav-item" id="tab-assets">
+            <a class="nav-link" asp-controller="Dashboard" asp-action="Assets">
+                <i class="fas fa-hand-holding"></i>
+                <span>Assets</span>
+            </a>
+        </li>*@
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+</ul>
+<!-- End of Sidebar -->
